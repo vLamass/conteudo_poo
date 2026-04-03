@@ -17,6 +17,19 @@ public class Main {
         int opcao;
         int quantidade_Saques = 0;
         double valor;
+        
+
+        ContaBancaria conta = new ContaBancaria();
+
+            System.out.println("Digite o Titular da Conta: ");
+            conta.titular = leia.next();
+            
+            System.out.println("Digite o Numero da Sua Conta: "); 
+            conta.numero = leia.nextInt();
+
+            
+
+            
 
             do{
                 System.out.println("1 - Ver saldo");
@@ -31,33 +44,20 @@ public class Main {
             
               switch (opcao) {
                 case 1:
-                    System.out.println("Seu Saldo Atual é R$:" + saldo);    
+                    System.out.println("Seu Saldo Atual é R$:" + conta.saldo);    
 
                 break;
 
                 case 2:
-                    System.out.println("Qual Valor Deseja Depositar");
-                    valor = leia.nextDouble();
-                    saldo = valor + saldo;
+                    System.out.println("Digite o Valor do Deposito: ");
+                    double depositar = leia.nextInt();
+                    conta.depositar(depositar);
                 break;
 
                 case 3:
-                    System.out.println("Qual Valor Deseja Sacar");
-                    valor = leia.nextDouble();
-                    if (quantidade_Saques >=     3) {
-                        System.out.println("Limite Maximo 3 Saques Diarios");
-                    }
-                    else if(valor >1000){
-                        System.out.println("O valor máximo por saque é de R$ 1.000,00");
-                    }
-                    else if (valor > saldo) {
-                        System.out.println("Seu Saldo e Insuficiente");
-                    }
-                    else{ 
-                        saldo -= valor;
-                        quantidade_Saques++;
-                        System.out.println("Saque Realizado Com Sucesso");  
-                        }
+                    System.out.println("Digite o Valor de Saque: ");
+                    double sacar = leia.nextInt();
+                    conta.sacar(sacar);
                 break;
                     
                 case 0:
