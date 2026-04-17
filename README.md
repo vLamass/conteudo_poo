@@ -35,7 +35,7 @@ IDE (Eclipse / IntelliJ / NetBeans)
 
 ### Clone o repositório:
 
-git clone https://github.com/vLamass/conteudo_poo.git\
+git clone https://github.com/vLamass/conteudo_poo.git <br/>
 Abra o projeto em sua IDE Java preferida\
 Compile e execute os arquivos .java
 
